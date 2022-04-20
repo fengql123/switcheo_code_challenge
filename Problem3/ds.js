@@ -1,4 +1,3 @@
-import axios from "axios";
 class price {
   constructor(price) {
     this.price = price;
@@ -19,7 +18,7 @@ class prices {
 }
 class dataSource {
   async getPrices() {
-    const response = await axios.get("https://static.ngnrs.io/test/prices");
+    const response = await fetch("https://static.ngnrs.io/test/prices");
     return new prices(response.data.data.prices).prices;
   }
 }
